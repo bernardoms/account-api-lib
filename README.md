@@ -9,7 +9,7 @@
 ```
 go get github.com/bernardoms/account-api-lib
 ```
-# How to use
+## How to use
 * For creating a new account ex:
 ```go
 package account_api_lib
@@ -117,3 +117,14 @@ It's possible to test using the makefile on the project
  
 It's possible to test using the docker-compose command
 `docker-compose up`
+
+## Decisions
+* Decided to use go module, because a lot easier than using go path with go get.
+
+* Decided to create a make file for be easier to run integration test without a lot of effort or using a lib 
+for bring up a container on test.
+
+* Using interface for http client (easier to test).
+
+* Used dependency injection because It's made life easier for inject mock for test or inject 
+your own client implementation.
